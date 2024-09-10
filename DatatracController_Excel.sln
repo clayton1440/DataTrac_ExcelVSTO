@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DatatracController_Excel", "DatatracController_Excel.vbproj", "{5514244A-0B17-4262-8E32-C1F9148D8D08}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DataTrac_ExcelVSTO_Setup", "..\DataTrac_ExcelVSTO_Setup\DataTrac_ExcelVSTO_Setup.vdproj", "{F30A416B-34C8-4A28-8889-B0C84FCE71B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5514244A-0B17-4262-8E32-C1F9148D8D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5514244A-0B17-4262-8E32-C1F9148D8D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5514244A-0B17-4262-8E32-C1F9148D8D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5514244A-0B17-4262-8E32-C1F9148D8D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F30A416B-34C8-4A28-8889-B0C84FCE71B0}.Debug|Any CPU.ActiveCfg = Debug
+		{F30A416B-34C8-4A28-8889-B0C84FCE71B0}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0BCAE59-96A1-4E7A-B4D7-5F9E56F2803A}
+	EndGlobalSection
+EndGlobal
