@@ -120,10 +120,9 @@ Public Class DataTracRibbon
     Private Sub WorkbookClose()
         WorkbookIsDatatracSourceButton.Enabled = False
         WorkbookIsDatatracSourceButton.Checked = False
-        WorkbookIsDatatracSourceButton.Checked = False
         DisplayGroup.Visible = False
         OptionsGroup.Visible = False
-        If WorkbookIsDataTracSource() Then ClearDisplays()
+        If WorkbookIsDataTracSource() AndAlso ThisWorkbook.Sheets("Datatrac_Options").Range("A1").Value Then ClearDisplays()
     End Sub
 
     Private Sub Workbook_RefreshAll()
