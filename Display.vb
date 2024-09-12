@@ -67,6 +67,7 @@ Public Class Display
         Clear()
 
         For Each message As Message In Messages.Values
+            Dim commandString As String = ""
             For Each field As MessageField In message.Fields.Values
                 Dim value As String = CheckValue(field.Value.Trim)
 
@@ -76,9 +77,9 @@ Public Class Display
                     field.xPos = field.xPos - value.Length
                 End If
 
-                Dim commandString As String = $"{Address.ToString.PadLeft(3, "0"c)}{ColorToDispCmd(field.Color)}{If(field.Flashing, $"{Address.ToString.PadLeft(3, "0"c)}FL", "")}{Address.ToString.PadLeft(3, "0"c)}WR{field.yPos.ToString.PadLeft(2, "0"c)}{field.xPos.ToString.PadLeft(3, "0"c)}{value}{If(field.Flashing, $"{Address.ToString.PadLeft(3, "0"c)}FL", "")}"
-                ComPort.SendString(commandString, Port, BaudRate)
+                commandString &= $"{Address.ToString.PadLeft(3, "0"c)}{ColorToDispCmd(field.Color)}{If(field.Flashing, $"{Address.ToString.PadLeft(3, "0"c)}FL", "")}{Address.ToString.PadLeft(3, "0"c)}WR{field.yPos.ToString.PadLeft(2, "0"c)}{field.xPos.ToString.PadLeft(3, "0"c)}{value}{If(field.Flashing, $"{Address.ToString.PadLeft(3, "0"c)}FL", "")}"
             Next
+            ComPort.SendString(commandString, Port, BaudRate)
         Next
 
     End Sub
