@@ -43,14 +43,9 @@
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Tab1 = Me.Factory.CreateRibbonTab
-        Me.DisplayGroup = Me.Factory.CreateRibbonGroup
-        Me.OptionsGroup = Me.Factory.CreateRibbonGroup
-        Me.ClearDisplayOnExit = Me.Factory.CreateRibbonCheckBox
-        Me.RefreshDisplayOnRefreshAll = Me.Factory.CreateRibbonCheckBox
-        Me.RefreshDisplayOnFileOpen = Me.Factory.CreateRibbonCheckBox
-        Me.refreshTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Group3 = Me.Factory.CreateRibbonGroup
         Me.WorkbookIsDatatracSourceButton = Me.Factory.CreateRibbonToggleButton
+        Me.DisplayGroup = Me.Factory.CreateRibbonGroup
         Me.BuildMessageButton = Me.Factory.CreateRibbonButton
         Me.RefreshDisplayButton = Me.Factory.CreateRibbonSplitButton
         Me.RefreshManuallyButton = Me.Factory.CreateRibbonCheckBox
@@ -61,10 +56,15 @@
         Me.ClearDisplayButton = Me.Factory.CreateRibbonButton
         Me.ResetDisplayButton = Me.Factory.CreateRibbonButton
         Me.ShowPreviewButton = Me.Factory.CreateRibbonButton
+        Me.OptionsGroup = Me.Factory.CreateRibbonGroup
+        Me.RefreshDisplayOnFileOpen = Me.Factory.CreateRibbonCheckBox
+        Me.ClearDisplayOnExit = Me.Factory.CreateRibbonCheckBox
+        Me.RefreshDisplayOnRefreshAll = Me.Factory.CreateRibbonCheckBox
+        Me.refreshTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Tab1.SuspendLayout()
+        Me.Group3.SuspendLayout()
         Me.DisplayGroup.SuspendLayout()
         Me.OptionsGroup.SuspendLayout()
-        Me.Group3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Tab1
@@ -76,6 +76,21 @@
         Me.Tab1.Label = "DataTrac"
         Me.Tab1.Name = "Tab1"
         '
+        'Group3
+        '
+        Me.Group3.Items.Add(Me.WorkbookIsDatatracSourceButton)
+        Me.Group3.Label = "DataTrac"
+        Me.Group3.Name = "Group3"
+        '
+        'WorkbookIsDatatracSourceButton
+        '
+        Me.WorkbookIsDatatracSourceButton.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.WorkbookIsDatatracSourceButton.Enabled = False
+        Me.WorkbookIsDatatracSourceButton.Image = Global.DatatracController_Excel.My.Resources.Resources.check
+        Me.WorkbookIsDatatracSourceButton.Label = "Enable DataTrac"
+        Me.WorkbookIsDatatracSourceButton.Name = "WorkbookIsDatatracSourceButton"
+        Me.WorkbookIsDatatracSourceButton.ShowImage = True
+        '
         'DisplayGroup
         '
         Me.DisplayGroup.Items.Add(Me.BuildMessageButton)
@@ -86,51 +101,6 @@
         Me.DisplayGroup.Label = "Display"
         Me.DisplayGroup.Name = "DisplayGroup"
         Me.DisplayGroup.Visible = False
-        '
-        'OptionsGroup
-        '
-        Me.OptionsGroup.Items.Add(Me.RefreshDisplayOnFileOpen)
-        Me.OptionsGroup.Items.Add(Me.ClearDisplayOnExit)
-        Me.OptionsGroup.Items.Add(Me.RefreshDisplayOnRefreshAll)
-        Me.OptionsGroup.Label = "Options"
-        Me.OptionsGroup.Name = "OptionsGroup"
-        Me.OptionsGroup.Visible = False
-        '
-        'ClearDisplayOnExit
-        '
-        Me.ClearDisplayOnExit.Label = "Clear Displays on Exit"
-        Me.ClearDisplayOnExit.Name = "ClearDisplayOnExit"
-        Me.ClearDisplayOnExit.ScreenTip = "Clear the display when Excel closes."
-        '
-        'RefreshDisplayOnRefreshAll
-        '
-        Me.RefreshDisplayOnRefreshAll.Label = "Refresh Displays on Refresh-All"
-        Me.RefreshDisplayOnRefreshAll.Name = "RefreshDisplayOnRefreshAll"
-        Me.RefreshDisplayOnRefreshAll.ScreenTip = "Automatically refresh the currently active message whenever the Refresh-All butto" &
-    "n is clicked"
-        Me.RefreshDisplayOnRefreshAll.Visible = False
-        '
-        'RefreshDisplayOnFileOpen
-        '
-        Me.RefreshDisplayOnFileOpen.Label = "Refresh Displays on Open"
-        Me.RefreshDisplayOnFileOpen.Name = "RefreshDisplayOnFileOpen"
-        '
-        'refreshTimer
-        '
-        '
-        'Group3
-        '
-        Me.Group3.Items.Add(Me.WorkbookIsDatatracSourceButton)
-        Me.Group3.Label = "DataTrac"
-        Me.Group3.Name = "Group3"
-        '
-        'WorkbookIsDatatracSourceButton
-        '
-        Me.WorkbookIsDatatracSourceButton.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.WorkbookIsDatatracSourceButton.Image = Global.DatatracController_Excel.My.Resources.Resources.check
-        Me.WorkbookIsDatatracSourceButton.Label = "Enable DataTrac"
-        Me.WorkbookIsDatatracSourceButton.Name = "WorkbookIsDatatracSourceButton"
-        Me.WorkbookIsDatatracSourceButton.ShowImage = True
         '
         'BuildMessageButton
         '
@@ -205,6 +175,37 @@
         Me.ShowPreviewButton.Name = "ShowPreviewButton"
         Me.ShowPreviewButton.ShowImage = True
         '
+        'OptionsGroup
+        '
+        Me.OptionsGroup.Items.Add(Me.RefreshDisplayOnFileOpen)
+        Me.OptionsGroup.Items.Add(Me.ClearDisplayOnExit)
+        Me.OptionsGroup.Items.Add(Me.RefreshDisplayOnRefreshAll)
+        Me.OptionsGroup.Label = "Options"
+        Me.OptionsGroup.Name = "OptionsGroup"
+        Me.OptionsGroup.Visible = False
+        '
+        'RefreshDisplayOnFileOpen
+        '
+        Me.RefreshDisplayOnFileOpen.Label = "Refresh Displays on Open"
+        Me.RefreshDisplayOnFileOpen.Name = "RefreshDisplayOnFileOpen"
+        '
+        'ClearDisplayOnExit
+        '
+        Me.ClearDisplayOnExit.Label = "Clear Displays on Exit"
+        Me.ClearDisplayOnExit.Name = "ClearDisplayOnExit"
+        Me.ClearDisplayOnExit.ScreenTip = "Clear the display when Excel closes."
+        '
+        'RefreshDisplayOnRefreshAll
+        '
+        Me.RefreshDisplayOnRefreshAll.Label = "Refresh Displays on Refresh-All"
+        Me.RefreshDisplayOnRefreshAll.Name = "RefreshDisplayOnRefreshAll"
+        Me.RefreshDisplayOnRefreshAll.ScreenTip = "Automatically refresh the currently active message whenever the Refresh-All butto" &
+    "n is clicked"
+        Me.RefreshDisplayOnRefreshAll.Visible = False
+        '
+        'refreshTimer
+        '
+        '
         'DataTracRibbon
         '
         Me.Name = "DataTracRibbon"
@@ -212,12 +213,12 @@
         Me.Tabs.Add(Me.Tab1)
         Me.Tab1.ResumeLayout(False)
         Me.Tab1.PerformLayout()
+        Me.Group3.ResumeLayout(False)
+        Me.Group3.PerformLayout()
         Me.DisplayGroup.ResumeLayout(False)
         Me.DisplayGroup.PerformLayout()
         Me.OptionsGroup.ResumeLayout(False)
         Me.OptionsGroup.PerformLayout()
-        Me.Group3.ResumeLayout(False)
-        Me.Group3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

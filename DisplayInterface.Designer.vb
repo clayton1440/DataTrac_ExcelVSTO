@@ -78,7 +78,7 @@ Partial Class DisplayInterface
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddFieldButton, Me.RemoveFieldButton, Me.CopyFieldButton, Me.ToolStripSeparator4, Me.SaveMessageButton, Me.ToolStripSeparator1, Me.HelpToolButton})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(599, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(669, 25)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -153,8 +153,8 @@ Partial Class DisplayInterface
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.SplitContainer1)
         Me.SplitContainer2.Panel2MinSize = 500
-        Me.SplitContainer2.Size = New System.Drawing.Size(792, 474)
-        Me.SplitContainer2.SplitterDistance = 189
+        Me.SplitContainer2.Size = New System.Drawing.Size(883, 450)
+        Me.SplitContainer2.SplitterDistance = 210
         Me.SplitContainer2.TabIndex = 8
         '
         'TreeView1
@@ -166,7 +166,7 @@ Partial Class DisplayInterface
         TreeNode1.Name = "DisplaysNode"
         TreeNode1.Text = "Displays"
         Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode1})
-        Me.TreeView1.Size = New System.Drawing.Size(189, 474)
+        Me.TreeView1.Size = New System.Drawing.Size(210, 450)
         Me.TreeView1.TabIndex = 0
         '
         'SplitContainer1
@@ -184,8 +184,8 @@ Partial Class DisplayInterface
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.MessagePreview)
-        Me.SplitContainer1.Size = New System.Drawing.Size(599, 474)
-        Me.SplitContainer1.SplitterDistance = 248
+        Me.SplitContainer1.Size = New System.Drawing.Size(669, 450)
+        Me.SplitContainer1.SplitterDistance = 300
         Me.SplitContainer1.TabIndex = 0
         '
         'DGVMessageEditor
@@ -198,7 +198,7 @@ Partial Class DisplayInterface
         Me.DGVMessageEditor.Location = New System.Drawing.Point(0, 25)
         Me.DGVMessageEditor.Name = "DGVMessageEditor"
         Me.DGVMessageEditor.RowHeadersWidth = 32
-        Me.DGVMessageEditor.Size = New System.Drawing.Size(599, 223)
+        Me.DGVMessageEditor.Size = New System.Drawing.Size(669, 275)
         Me.DGVMessageEditor.TabIndex = 4
         '
         'MessagePreview
@@ -206,7 +206,7 @@ Partial Class DisplayInterface
         Me.MessagePreview.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MessagePreview.Location = New System.Drawing.Point(0, 0)
         Me.MessagePreview.Name = "MessagePreview"
-        Me.MessagePreview.Size = New System.Drawing.Size(599, 222)
+        Me.MessagePreview.Size = New System.Drawing.Size(669, 146)
         Me.MessagePreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.MessagePreview.TabIndex = 0
         Me.MessagePreview.TabStop = False
@@ -292,20 +292,20 @@ Partial Class DisplayInterface
         '
         Me.Node2CM.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteMessageToolStripMenuItem1})
         Me.Node2CM.Name = "DisplayNodeCM"
-        Me.Node2CM.Size = New System.Drawing.Size(181, 48)
+        Me.Node2CM.Size = New System.Drawing.Size(157, 26)
         '
         'DeleteMessageToolStripMenuItem1
         '
         Me.DeleteMessageToolStripMenuItem1.Image = Global.DatatracController_Excel.My.Resources.Resources.trash
         Me.DeleteMessageToolStripMenuItem1.Name = "DeleteMessageToolStripMenuItem1"
-        Me.DeleteMessageToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.DeleteMessageToolStripMenuItem1.Size = New System.Drawing.Size(156, 22)
         Me.DeleteMessageToolStripMenuItem1.Text = "Delete Message"
         '
         'DisplayInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(792, 474)
+        Me.ClientSize = New System.Drawing.Size(883, 450)
         Me.Controls.Add(Me.SplitContainer2)
         Me.Name = "DisplayInterface"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
