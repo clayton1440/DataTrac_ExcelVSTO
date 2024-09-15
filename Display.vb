@@ -72,9 +72,9 @@ Public Class Display
                 Dim value As String = CheckValue(field.Value.Trim)
 
                 If field.Justification = FieldJustification.Center Then
-                    field.xPos = field.xPos - Math.Floor(value.Length / 2)
+                    field.xPos = field.xPos - (Math.Floor(value.Length / 2) - 1)
                 ElseIf field.Justification = FieldJustification.Right Then
-                    field.xPos = field.xPos - value.Length
+                    field.xPos = field.xPos - (value.Length - 1)
                 End If
 
                 commandString &= $"{Address.ToString.PadLeft(3, "0"c)}{ColorToDispCmd(field.Color)}{If(field.Flashing, $"{Address.ToString.PadLeft(3, "0"c)}FL", "")}{Address.ToString.PadLeft(3, "0"c)}WR{field.yPos.ToString.PadLeft(2, "0"c)}{field.xPos.ToString.PadLeft(3, "0"c)}{value}{If(field.Flashing, $"{Address.ToString.PadLeft(3, "0"c)}FL", "")}"
@@ -293,7 +293,7 @@ Module DisplayPreview
             Dim charHeight As Integer = charSize.Height
 
             ' Calculate the size of the bitmap based on display dimensions
-            Dim bmpWidth As Integer = (display.Columns - 1) * charWidth
+            Dim bmpWidth As Integer = display.Columns * charWidth
             Dim bmpHeight As Integer = display.Rows * charHeight + 8
 
             ' Create a new bitmap
@@ -323,9 +323,9 @@ Module DisplayPreview
                             Dim y As Integer = (field.yPos - 1) * charHeight + 4
 
                             If field.Justification = FieldJustification.Center Then
-                                x -= Math.Round(text.Length / 2) * charWidth
+                                x -= (Math.Floor(text.Length / 2) - 1) * charWidth
                             ElseIf field.Justification = FieldJustification.Right Then
-                                x -= text.Length * charWidth
+                                x -= (text.Length - 1) * charWidth
                             End If
 
                             ' Draw the text

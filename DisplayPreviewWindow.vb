@@ -15,7 +15,6 @@
         form._display = disp
         form.Text = form.Text & $" - {disp.Name}"
         form.PictureBox1.Image = DisplayPreview.CreateDisplayBitmap(disp)
-        form.Width = form.PictureBox1.Image.Width
         form.Show()
     End Sub
 

@@ -36,7 +36,7 @@ Partial Class DisplayPreviewWindow
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(384, 207)
+        Me.PictureBox1.Size = New System.Drawing.Size(499, 284)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -51,14 +51,14 @@ Partial Class DisplayPreviewWindow
         '
         Me.RefreshPreviewToolStripMenuItem.Image = Global.DatatracController_Excel.My.Resources.Resources.refresh
         Me.RefreshPreviewToolStripMenuItem.Name = "RefreshPreviewToolStripMenuItem"
-        Me.RefreshPreviewToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RefreshPreviewToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.RefreshPreviewToolStripMenuItem.Text = "Refresh Preview"
         '
         'DisplayPreviewWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 207)
+        Me.ClientSize = New System.Drawing.Size(499, 284)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.MaximizeBox = False
