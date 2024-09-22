@@ -235,7 +235,6 @@
     <Compile Include="DisplayPreviewWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="eFont.vb" />
     <Compile Include="NewDisplayForm.Designer.vb">
       <DependentUpon>NewDisplayForm.vb</DependentUpon>
     </Compile>
@@ -253,7 +252,7 @@
       <DependentUpon>NewDisplayForm.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="DatatracController_Excel_TemporaryKey.pfx" />
-    <None Include="Resources\CGMono-Regular.ttf" />
+    <None Include="packages.config" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.vb</DependentUpon>
     </None>

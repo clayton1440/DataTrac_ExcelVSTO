@@ -1,4 +1,5 @@
 ﻿Imports System.IO.Ports
+Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class Display
     Public Property Name As String
@@ -111,6 +112,7 @@ Public Class Display
             serialPort.Open()
             serialPort.Write(data)
             serialPort.Close()
+            serialPort.Dispose()
         End Sub
     End Class
 
@@ -125,13 +127,7 @@ Public Class Message
 
     Public Shared Function GetMessages(lo As Excel.ListObject, disp As Display) As List(Of Message)
         Dim messages As New List(Of Message)
-        ' Get messages from Excel
-        ' For each row in the message table
-        ' Create a new message object
-        ' Add the message object to the list
-
-
-        ' Iterate through each row in the table
+        ' Get messages for Display disp and return new list of messages
         For Each row As Excel.ListRow In lo.ListRows
             If row.Range(5).Value = disp.ID Then
                 Dim message As New Message
@@ -147,12 +143,7 @@ Public Class Message
     End Function
     Public Shared Function GetMessages(lo As Excel.ListObject) As List(Of Message)
         Dim messages As New List(Of Message)
-        ' Get messages from Excel
-        ' For each row in the message table
-        ' Create a new message object
-        ' Add the message object to the list
-
-        ' Iterate through each row in the table
+        ' Get all messages and return new list
         For Each row As Excel.ListRow In lo.ListRows
             Dim message As New Message
             message.ID = row.Range(1).Value
@@ -181,12 +172,7 @@ Public Class MessageField
 
     Public Shared Function GetFields(lo As Excel.ListObject, msg As Message) As List(Of MessageField)
         Dim fields As New List(Of MessageField)
-        ' Get fields from Excel
-        ' For each row in the field table
-        ' Create a new field object
-        ' Add the field object to the list
-
-        ' Iterate through each row in the table
+        ' Get fields for Message msg and return new list of fields
         For Each row As Excel.ListRow In lo.ListRows
             If row.Range(1).Value = msg.ID Then
                 Dim field As New MessageField
@@ -207,12 +193,7 @@ Public Class MessageField
     End Function
     Public Shared Function GetFields(lo As Excel.ListObject) As List(Of MessageField)
         Dim fields As New List(Of MessageField)
-        ' Get fields from Excel
-        ' For each row in the field table
-        ' Create a new field object
-        ' Add the field object to the list
-
-        ' Iterate through each row in the table
+        ' Get all fields and return new list
         For Each row As Excel.ListRow In lo.ListRows
             Dim field As New MessageField
             field.Name = row.Range(2).Value
@@ -283,7 +264,7 @@ Module DisplayPreview
 
     Public Function CreateDisplayBitmap(display As Display) As Bitmap
         ' Set up font
-        Dim font As Font = eFont.LoadEmbeddedFont(My.Resources.CGMono_Regular, 16) ' Monospace font
+        Dim font As New Font("Consolas", 16, FontStyle.Regular) ' Monospace font
 
 
         ' Measure the size of a single character to determine pixel size per character
